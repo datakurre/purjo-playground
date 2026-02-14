@@ -8,7 +8,10 @@ Project instructions for LLM coding agents creating **Robot Framework bots** orc
 2. **MUST run `pur init --task` only inside an empty directory.** If not empty: stop, pick a new dir, or ask.
 3. **MUST keep BPMN topic == `pyproject.toml` topic mapping** (exact string match).
 4. **Python keyword libraries MUST use both decorators:** `@library()` on the class and `@keyword()` on every exposed method.
-
+5. **MUST scaffold and validate .robot-files with `robotmcp`**
+6. **MUST edit .bpmn only with `bpmn-js-mcp`**
+7. **MUST edit .dmn only with `dmn-js-mcp`**
+8. **MUST edit .form only with `form-js-mcp`**
 
 ## New Bot (Golden Path)
 
