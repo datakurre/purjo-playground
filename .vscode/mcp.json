@@ -1,0 +1,24 @@
+{
+  "servers": {
+    "robotmcp": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "robotmcp"]
+    },
+    "bpmn-js-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "https://github.com/datakurre/bpmn-js-mcp.git"]
+    },
+    "dmn-js-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "https://github.com/datakurre/dmn-js-mcp.git"]
+    },
+    "form-js-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "https://github.com/datakurre/form-js-mcp.git"]
+    }
+  }
+}
