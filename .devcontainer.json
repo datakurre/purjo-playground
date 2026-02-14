@@ -8,7 +8,7 @@
         "GitHub.copilot-chat",
         "mkhl.direnv",
         "d-biehl.robotcode",
-        "/workspaces/operaton-robot-playground/fixture/vs-code-bpmn-modeler-0.6.2.vsix",
+        "/workspaces/purjo-playground/fixture/vs-code-bpmn-modeler-0.6.2.vsix",
       ]
     }
   },
