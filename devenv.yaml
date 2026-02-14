@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://devenv.sh/devenv.schema.json
+inputs:
+  devenv:
+    url: github:cachix/devenv/v1.11.2
+  nixpkgs:
+    url: github:nixos/nixpkgs/nixos-25.11
+  mvn2nix:
+    url: gitlab:vasara-bpm/mvn2nix
+  devenv-module-mvn2nix:
+    url: gitlab:vasara-bpm/devenv-module-mvn2nix
+    flake: false
+  devenv-module-operaton:
+    url: gitlab:vasara-bpm/devenv-module-operaton
+    flake: false
+allowUnfree: true
+imports:
+- devenv-module-mvn2nix
+- devenv-module-operaton

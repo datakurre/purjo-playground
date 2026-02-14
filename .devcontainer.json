@@ -1,0 +1,25 @@
+{
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bbenoist.Nix",
+        "be5invis.toml",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "mkhl.direnv",
+        "d-biehl.robotcode",
+        "/workspaces/operaton-robot-playground/fixture/vs-code-bpmn-modeler-0.6.2.vsix",
+      ]
+    }
+  },
+  "image": "ghcr.io/cachix/devenv/devcontainer:v1.11.2",
+  "overrideCommand": false,
+  "postCreateCommand": "direnv allow",
+  "postStartCommand": "devenv up -d",
+  "updateContentCommand": "devenv test",
+  "portsAttributes": {
+    "8080": {
+      "label": "operaton"
+    }
+  }
+}
