@@ -1,12 +1,12 @@
 # AGENTS.md
 
-Project instructions for LLM coding agents creating **Robot Framework bots** orchestrated by **Operaton BPM** using **purjo**. `rf-mcp` is available for keyword discovery and stepwise execution help.
+Instructions for LLM coding agents creating **Robot Framework** task automation bots orchestrated by **Operaton BPM** using **purjo**. 
 
 
 ## Non‑Negotiables
 
-1. **MUST scaffold new bots with `pur init` (never hand-create files).**
-2. **MUST run `pur init` only inside an empty directory.** If not empty: stop, pick a new dir, or ask.
+1. **MUST scaffold new bots with `pur init --task` (never hand-create files).**
+2. **MUST run `pur init --task` only inside an empty directory.** If not empty: stop, pick a new dir, or ask.
 3. **MUST keep BPMN topic == `pyproject.toml` topic mapping** (exact string match).
 4. **Python keyword libraries MUST use both decorators:** `@library()` on the class and `@keyword()` on every exposed method.
 
@@ -18,7 +18,7 @@ mkdir my-bot
 cd my-bot
 ls -la
 # MUST be empty (only '.' and '..')
-pur init
+pur init --task
 ```
 
 Then modify the generated template (do not add new scaffolding unless asked):
@@ -36,7 +36,7 @@ Then modify the generated template (do not add new scaffolding unless asked):
 # Optional per-topic overrides
 [tool.purjo.topics."My Topic in BPMN"]
 name = "My Task Name in Robot"
-on-fail = "FAIL"           # FAIL|COMPLETE|ERROR
+on-fail = "FAIL"
 process-variables = false
 ```
 
@@ -72,7 +72,6 @@ Declare expected inputs with safe defaults:
 ```robotframework
 *** Variables ***
 ${BPMN:TASK}        local
-${BPMN:PROCESS}     local
 
 ${message}          ${None}
 ${count}            ${None}
@@ -92,14 +91,12 @@ Do Work
     VAR    ${result}    ${result}    scope=${BPMN:TASK}
 ```
 
-Note: if a value was introduced via **BPMN input mapping**, exporting to process scope still typically requires **BPMN output mapping**.
-
+Note: Values are mapped from process scope to task scope via **BPMN input mapping** and exported back to process scope **BPMN output mapping**.
 
 ## Python Keyword Libraries (Do Not Get This Wrong)
 
 ```python
 from robot.api.deco import keyword, library
-
 
 @library()
 class MyLibrary:
@@ -111,7 +108,6 @@ class MyLibrary:
 Rules:
 - Every exposed method MUST have `@keyword()`.
 - Arguments must have type hints.
-
 
 ## BPMN Modeling
 
@@ -126,7 +122,6 @@ Rules:
 - Outputs: task variables → process variables
 - File variables: use `${execution.getVariableTyped("name")}`
 - Gateways: use JUEL like `${errorCode != null}`
-
 
 ## Add a User Task + Camunda 7 Generated Task Form (Recommended for Demos)
 
@@ -145,7 +140,6 @@ id: count     type: long     label: Count
 id: enabled   type: boolean  label: Enabled
 ```
 
-
 ## Fast Local Testing (No Engine)
 
 ```robotframework
@@ -160,7 +154,6 @@ Task Works
     Should Be Equal    ${outputs}[result]    ok
 ```
 
-
 ## Run with Engine (Playground)
 
 ```bash
@@ -169,13 +162,11 @@ pur run hello.bpmn
 pur serve .
 ```
 
-
-## rf-mcp (Available)
+## rf-mcp
 
 Use MCP to:
 - discover keywords and args (`find_keywords`, `get_keyword_info`)
 - iterate stepwise, then generate final suite once steps succeed
-
 
 ## Agent Checklist
 
