@@ -7,7 +7,7 @@
         "GitHub.copilot"
         "GitHub.copilot-chat"
         "mkhl.direnv"
-        "robocorp.robotframework-lsp"
+        "d-biehl.robotcode"
         "vscodevim.vim"
         "/workspaces/purjo-playground/fixture/vs-code-bpmn-modeler-0.6.2.vsix"
       ];
