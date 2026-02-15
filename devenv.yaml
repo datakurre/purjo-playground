@@ -20,3 +20,4 @@ imports:
 - devenv-module-mvn2nix
 - devenv-module-operaton
 - devenv-module-devcontainer
+profile: shell
