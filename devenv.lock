@@ -55,6 +55,21 @@
         "type": "github"
       }
     },
+    "devenv-module-devcontainer": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1769417663,
+        "owner": "vasara-bpm",
+        "repo": "devenv-module-devcontainer",
+        "rev": "9eed4c8aa468116648146635dd33dedd3c2e2688",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "vasara-bpm",
+        "repo": "devenv-module-devcontainer",
+        "type": "gitlab"
+      }
+    },
     "devenv-module-mvn2nix": {
       "flake": false,
       "locked": {
@@ -327,6 +342,7 @@
     "root": {
       "inputs": {
         "devenv": "devenv",
+        "devenv-module-devcontainer": "devenv-module-devcontainer",
         "devenv-module-mvn2nix": "devenv-module-mvn2nix",
         "devenv-module-operaton": "devenv-module-operaton",
         "git-hooks": "git-hooks_2",

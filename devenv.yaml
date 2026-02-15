@@ -12,7 +12,11 @@ inputs:
   devenv-module-operaton:
     url: gitlab:vasara-bpm/devenv-module-operaton
     flake: false
+  devenv-module-devcontainer:
+    url: gitlab:vasara-bpm/devenv-module-devcontainer
+    flake: false
 allowUnfree: true
 imports:
 - devenv-module-mvn2nix
 - devenv-module-operaton
+- devenv-module-devcontainer
