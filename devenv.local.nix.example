@@ -4,10 +4,11 @@
       tweaks = [ "podman" "vscode" "gpg-agent" ];
       settings.customizations.vscode.extensions = [
         "bbenoist.Nix"
+        "be5invis.toml"
+        "d-biehl.robotcode"
         "GitHub.copilot"
         "GitHub.copilot-chat"
         "mkhl.direnv"
-        "d-biehl.robotcode"
         "vscodevim.vim"
         "/workspaces/purjo-playground/fixture/vs-code-bpmn-modeler-0.6.2.vsix"
       ];
