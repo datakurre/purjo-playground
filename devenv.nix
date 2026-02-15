@@ -8,6 +8,9 @@
   languages.javascript.enable = true;
   languages.javascript.npm.enable = true;
 
+  languages.python.enable = true;
+  languages.python.uv.enable= true;
+
   services.vault = {
     enable = true;
     disableMlock = true;
