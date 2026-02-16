@@ -50,7 +50,6 @@
     '';
 
     enterShell = ''
-      echo "FOO"
       unset PYTHONPATH
       export UV_LINK_MODE=copy
       export UV_PYTHON_DOWNLOADS=never
