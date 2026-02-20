@@ -1,27 +1,36 @@
 {
+  "containerEnv": {
+    "HOME": "/home/vscode"
+  },
+  "containerUser": "vscode",
   "customizations": {
     "vscode": {
       "extensions": [
+        "mkhl.direnv",
+        "bbenoist.Nix",
         "jnoortheen.nix-ide",
         "be5invis.toml",
+        "d-biehl.robotcode",
         "GitHub.copilot",
         "GitHub.copilot-chat",
-        "mkhl.direnv",
-        "d-biehl.robotcode",
         "/workspaces/purjo-playground/fixture/bpmn-modeler-0.1.0.vsix",
         "/workspaces/purjo-playground/fixture/dmn-modeler-0.1.0.vsix",
         "/workspaces/purjo-playground/fixture/form-js-modeler-0.1.0.vsix"
       ]
     }
   },
-  "image": "ghcr.io/cachix/devenv/devcontainer:v1.11.2",
+  "image": "ghcr.io/cachix/devenv/devcontainer:latest",
+  "mounts": [
+    "source=${localEnv:XDG_RUNTIME_DIR}/gnupg/S.gpg-agent,target=/run/host-gpg-agent,type=bind,readonly"
+  ],
   "overrideCommand": false,
   "postCreateCommand": "direnv allow",
-  "postStartCommand": "devenv up -d",
-  "updateContentCommand": "devenv test",
-  "portsAttributes": {
-    "8080": {
-      "label": "operaton"
-    }
-  }
+  "postStartCommand": "mkdir -p /home/vscode/.gnupg && rm -f /home/vscode/.gnupg/S.gpg-agent && ln -s /run/host-gpg-agent /home/vscode/.gnupg/S.gpg-agent",
+  "remoteEnv": {
+    "GPG_TTY": "/dev/pts/0"
+  },
+  "runArgs": [
+    "--userns=keep-id"
+  ],
+  "updateContentCommand": "devenv shell -- echo Ready."
 }

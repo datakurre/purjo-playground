@@ -1,3 +1,4 @@
 devenv.local.nix
+devenv.local.yaml
 .devenv*
 .operaton-scripts/
