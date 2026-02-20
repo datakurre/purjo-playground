@@ -3,10 +3,10 @@
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1771545453,
+        "lastModified": 1771591269,
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "1419489f71dbb1736142428e2e81e3911e79945f",
+        "rev": "cd2ec51a7bd74a9a9527c0145b8449c6110050d4",
         "type": "github"
       },
       "original": {
@@ -23,10 +23,10 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1771596583,
+        "lastModified": 1771598443,
         "owner": "vasara-bpm",
         "repo": "devenv-module-operaton",
-        "rev": "fd60fe97eb8502a9d92de4040d185f42fca94302",
+        "rev": "436fc04985bdf5c2f08bf5ff7c4adccf8bb85b6a",
         "type": "gitlab"
       },
       "original": {
