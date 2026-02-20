@@ -3,7 +3,8 @@ inputs:
   nixpkgs:
     url: github:nixos/nixpkgs/nixos-25.11
   devenv-module-operaton:
-    url: gitlab:vasara-bpm/devenv-module-operaton/devenv
+    url: gitlab:vasara-bpm/devenv-module-operaton
+allowUnfree: true  # for vault
 imports:
   - devenv-module-operaton/module.nix
 profile: shell
