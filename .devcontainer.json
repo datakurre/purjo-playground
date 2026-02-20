@@ -14,7 +14,7 @@
       ]
     }
   },
-  "image": "ghcr.io/cachix/devenv/devcontainer:v1.11.2",
+  "image": "ghcr.io/cachix/devenv/devcontainer:latest",
   "overrideCommand": false,
   "postCreateCommand": "direnv allow",
   "postStartCommand": "devenv up -d",
