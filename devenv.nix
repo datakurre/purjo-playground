@@ -5,7 +5,7 @@
     services.operaton.port = 8080;
     services.operaton.package = devenv-module-operaton.packages.${pkgs.stdenv.hostPlatform.system}.default;
     services.operaton.enable = true;
-    services.operaton.proxied = true;
+    services.operaton.forwardHeadersStrategy = "native";
     services.operaton.postgresql.enable = true;
 
     languages.javascript.enable = true;
