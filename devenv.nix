@@ -6,7 +6,7 @@
     services.operaton.package = devenv-module-operaton.packages.${pkgs.stdenv.hostPlatform.system}.default;
     services.operaton.enable = true;
     services.operaton.forwardHeadersStrategy = "native";
-    services.operaton.postgresql.enable = true;
+    services.operaton.postgres.enable = true;
 
     languages.javascript.enable = true;
     languages.javascript.npm.enable = true;
